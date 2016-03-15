@@ -5,7 +5,7 @@
 #
 #     add_lcmtype(lcmfile)
 #          which generates build rules for C,CPP, Java (if java is available), and
-#      Python (if python is available) by calling the methods below
+#	   Python (if python is available) by calling the methods below
 #
 #     add_c_lcmtype(lcmfile)
 #     add_cpp_lcmtype(lcmfile)
@@ -16,7 +16,7 @@
 #
 #     lcmtypes_build([C_AGGREGATE_HEADER header_fname]
 #                    [C_LIBNAME lib_name]
-#            [CPP_AGGREGATE_HEADER header_fname]
+#		     [CPP_AGGREGATE_HEADER header_fname]
 #                    [JARNAME jar_name])
 #
 #          In addition to any files added via add_lcm calls, this function will
@@ -80,7 +80,9 @@
 # File: lcmtypes.cmake
 # Distributed with pods version: 12.09.21
 
-cmake_minimum_required(VERSION 2.6.0)
+cmake_minimum_required(VERSION 2.8.3) # for the CMakeParseArguments macro
+
+include(CMakeParseArguments)
 
 # Policy settings to prevent warnings on 2.6 but ensure proper operation on
 # 2.4.
